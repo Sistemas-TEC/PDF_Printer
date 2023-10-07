@@ -1,6 +1,4 @@
-# Cancherks
-Sport installation system where students and employees can reserve any type of sport installation during the available times. 
-The administrators can manage the requests.
-
+# PDF Printer
+Print Manager, design to be used in Tecnológico de Costa Rica.
 Authors:
-Maynor Martínez and Fernanda Murillo.
+Carlos Murcia y Kendall Guzmán
