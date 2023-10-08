@@ -7,6 +7,9 @@
 # IDE - Visual Studio Code
 .vscode/
 
+# IDE - Visual Studio
+LayoutTemplateWebApp/.vs/
+
 # IDE - JetBrains Rider
 .idea/
 
