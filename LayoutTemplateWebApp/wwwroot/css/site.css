@@ -1,7 +1,7 @@
 
 :root {
-    --colorMain: #00A38B;
-    --colorMainRGB: 0, 163, 139;
+    --colorMain: #1A63C1;
+    --colorMainRGB: 26, 99, 193;
     --colorMainTrans: rgba(0, 163, 139, 0.1);
     --greyFooter: #F1F1F1;
     --whiteContranst: #F6F6F6;
@@ -43,19 +43,19 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 img {
@@ -75,15 +75,15 @@ img {
 /* This secction is for color backgrounds with transparency*/
 
 .bg-colorMainTrans {
-    --bs-bg-opacity: 0.1;
+    --bs-bg-opacity: 0.5;
     background-color: rgba(var(--colorMainRGB), var(--bs-bg-opacity));
 }
 
-.bg-grayContrast{
+.bg-grayContrast {
     background-color: var(--whiteContranst);
 }
 
-.bg-footer{
+.bg-footer {
     background-color: var(--greyFooter);
 }
 
