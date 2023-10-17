@@ -1,0 +1,227 @@
+﻿@page
+@model LayoutTemplateWebApp.Pages.InicioModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+
+<section class="container px-5 py-3" >
+
+    <table class="table" style="margin-top: 1rem;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Ruta de archivo</th>
+                <th scope="col">Copias</th>
+                <th scope="col">Rango</th>
+                <th scope="col">Tamaño del papel</th>
+                <th scope="col">Escala</th>
+                <th scope="col">Color</th>
+            </tr>
+        </thead>
+
+    </table>
+
+</section>
+
+<modalAcept class="modal" tabindex="-1" id="acept">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ATENCIÓN!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Confirma que desea aprobar esta solicitud?</p>
+            </div>
+            <div class="modal-footer">
+
+                <form method="post">
+                    <input type="hidden" id="idSolicitud" name="idSolicitud" value="" />
+                    <button type="submit" class="btn btn-primary button-color" data-bs-dismiss="modal" id="btnAceptar">Aceptar</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</modalAcept>
+
+<modalNotify class="modal" tabindex="-1" id="notify">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ATENCIÓN!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Se ha notificado al estudiante.</p>
+            </div>
+        </div>
+    </div>
+</modalNotify>
+
+
+<modalReject class="modal" tabindex="-1" id="reject">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ATENCIÓN!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Confirma que desea rechazar esta solicitud?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary button-color" data-bs-dismiss="modal" id="btnRechazarAceptar">Aceptar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</modalReject>
+
+<modalJustify class="modal" tabindex="-1" id="justify">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ATENCIÓN!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Ingrese el mensaje de justificación.</p>
+                <input type="text" class="form-control" id="justificacionInput" placeholder="Escriba la justificación">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary button-color" data-bs-dismiss="modal" id="btnEnviar">Enviar</button>
+            </div>
+        </div>
+    </div>
+</modalJustify>
+
+
+
+<!-- Alert before acepting request -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var successIcons = document.querySelectorAll('.custom-success');
+
+        successIcons.forEach(function (icon) {
+            icon.addEventListener('click', function () {
+                var requestId = this.getAttribute('data-id');
+                document.getElementById('idSolicitud').value = requestId;
+                var aceptarModal = new bootstrap.Modal(document.getElementById('acept'));
+                aceptarModal.show();
+            });
+        });
+    });
+</script>
+
+<!-- Alert before rejecting  request -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var successIcons = document.querySelectorAll('.custom-danger');
+
+        successIcons.forEach(function (icon) {
+            icon.addEventListener('click', function () {
+                var aceptarModal = new bootstrap.Modal(document.getElementById('reject'));
+                aceptarModal.show();
+            });
+        });
+    });
+</script>
+
+<!-- Notify after acepting the request -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btnAceptar = document.getElementById('btnAceptar');
+       
+        btnAceptar.addEventListener('click', function () {
+            var idRequest = document.getElementById('idSolicitud').value;
+            var aceptarModal = new bootstrap.Modal(document.getElementById('acept'));
+            
+            aceptarModal.hide();
+            setTimeout(function () {
+                var notificarModal = new bootstrap.Modal(document.getElementById('notify'));
+                notificarModal.show();
+            }, 200); 
+        });
+    });
+</script>
+
+<!-- Justify after rejecting the request -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btnRechazarAceptar = document.getElementById('btnRechazarAceptar');
+
+        btnRechazarAceptar.addEventListener('click', function () {
+           
+            var rechazarModal = new bootstrap.Modal(document.getElementById('reject'));
+            
+            rechazarModal.hide();
+
+            setTimeout(function () {
+                var justificarModal = new bootstrap.Modal(document.getElementById('justify'));
+                justificarModal.show();
+            }, 200); 
+        });
+    });
+</script>
+
+<!-- Notify after sending justification message -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btnEnviar = document.getElementById('btnEnviar');
+
+        btnEnviar.addEventListener('click', function () {
+            
+            var justificarModal = new bootstrap.Modal(document.getElementById('justify'));
+          
+            justificarModal.hide();
+
+            setTimeout(function () {
+                var notificarModal = new bootstrap.Modal(document.getElementById('notify'));
+                notificarModal.show();
+            }, 200); 
+        });
+    });
+</script>
+
+<!-- Filter Data -->
+<script>
+    document.querySelectorAll('.custom-dropdown-item').forEach(item => {
+        item.addEventListener('click', function () {
+            var installationId = this.getAttribute('data-id');
+            filterTable(installationId);
+        });
+    });
+
+    function filterTable(installationId) {
+        var tableRows = document.querySelectorAll('.table tbody tr');
+        tableRows.forEach(row => {
+            var rowInstallationId = row.getAttribute('data-installation-id');
+            if (installationId === "0" || rowInstallationId === installationId) {
+                row.style.display = '';  // Mostrar todas las filas si se selecciona "Todas las instalaciones" o si coincide con la instalación seleccionada
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+<!-- Change placeholder when user selects option -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => { // Asegura que el DOM está completamente cargado
+        const dropdownItems = document.querySelectorAll('.custom-dropdown-item');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const selectedText = this.textContent || this.innerText; // Obtiene el texto del item seleccionado
+                document.getElementById('dropdownMenuButton').textContent = selectedText; // Cambia el texto del botón
+                const installationId = this.getAttribute('data-id'); // Obtiene el ID de la instalación
+                filterTable(installationId); // Llama a la función para filtrar la tabla
+            });
+        });
+    });
+</script>

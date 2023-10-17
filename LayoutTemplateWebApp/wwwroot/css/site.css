@@ -1,37 +1,125 @@
 
 :root {
+<<<<<<< Updated upstream
     --colorMain: #00A38B;
     --colorMainRGB: 0, 163, 139;
+=======
+    /* Color Main*/
+    --colorMain: #1166CC;
+    --colorMainRGB: 17, 102, 204;
+    --colorMainText: #1166CC;
+    --colorMainTextRGB: 17, 102, 204;
+    /* Color Main 50%*/
+    --colorMain50: #1166CC88;
+    --colorMain50RGB: 17, 102, 204, 0.5;
+    --colorMain50Text: #1166CC88;
+    --colorMain50TextRGB: 17, 102, 204, 0.5;
+    /* Color Main 40%*/
+    --colorMain40: #1166CC3F;
+    --colorMain40RGB: 17, 102, 204, 0.4;
+    --colorMain40Text: #1166CC3F;
+    --colorMain40TextRGB: 17, 102, 204, 0.4;
+    /* Color Main 20%*/
+    --colorMain20: #1166CC1F;
+    --colorMain20RGB: 17, 102, 204, 0.2;
+    --colorMain20Text: #1166CC1F;
+    --colorMain20TextRGB: 17, 102, 204, 0.2;
+    /* Color Tranparent */
+>>>>>>> Stashed changes
     --colorMainTrans: rgba(0, 163, 139, 0.1);
+    /* Color Black */
+    --colorBlack: #000000;
+    --colorBlackRGB: 0, 0, 0;
+    --colorBlackText: #000000;
+    --colorBlackTextRGB: 0, 0, 0;
+    /* Color White */
+    --colorWhite: #ffffff;
+    --textBlackTextRGB: 255, 255, 255;
+    --colorWhite: #ffffff;
+    --textBlackTextRGB: 255, 255, 255;
+    /* Color Icons */
+    --colorWhite: #111111;
+    --colorWhite: 17, 17, 17;
+    /* Color Frames */
+    --colorDisable: #ACB4BC;
     --greyFooter: #F1F1F1;
-    --whiteContranst: #F6F6F6;
     --greyFooterRGB: 241,241,241;
-    --textGrey: #495057;
-    --textGreyRGB: 73, 80, 87;
-    --textcolor: #00A88F;
-    --textcolorRGB: 0, 163, 143;
-    --textBlack: 000000;
-    --textBlackRGB: 0, 0, 0;
-    --gradientMaincolor: linear-gradient(to right, rgba(14,171,163,1) 0%, rgba(22, 193,181,1) 100%);
-    --color3: #3CBCCB;
-    --color4: #8795B0;
-    --color5: #CAD8F2;
-    --color6: rgb(20, 25, 25);
-    --white: #FFFFFF;
-    --color1MainTrans: rgba(24, 24, 35, 0.2);
-    --color1Trans: rgba(10, 10, 15, 0.5);
-    --color2Trans: rgba(51, 161, 212, 0.2);
-    --color2TransPlus: rgba(51, 161, 212, 0.08);
-    --color3Trans: rgba(60, 188, 203, 0.4);
-    --color4Trans: rgba(135, 149, 176, 0.4);
-    --color5Trans: rgba(202, 216, 242, 0.4);
-    --color6Trans: rgba(60, 60, 60, 0.8);
-    --gradient: linear-gradient(to right, rgba(49, 156, 214, 1) 0%, rgba(61, 192, 201, 1) 100%);
-    --gradient2: linear-gradient(61deg, rgba(87, 204, 223, 1) 0%, rgba(71, 115, 217, 1) 100%);
+    /* Frame Sizes */
+    --navMaxHeight: 85px;
+    --footerMaxHeigth: 50px;
+    /* Font Size */
     --font-primary: 'Roboto', sans-serif;
+    /* Height size */
     --navMaxHeight: 85px;
     --footerMaxHeigth: 50px;
 }
+    :root.night-mode {
+        --colorMain: #1A63C1;
+        --colorMainRGB: 26, 99, 193;
+        --colorMainTrans: rgba(0, 163, 139, 0.1);
+        --greyFooter: #F1F1F1;
+        --whiteContranst: #F6F6F6;
+        --greyFooterRGB: 241,241,241;
+        --textGrey: #495057;
+        --textGreyRGB: 73, 80, 87;
+        --textcolor: #00A88F;
+        --textcolorRGB: 0, 163, 143;
+        --textBlack: 000000;
+        --textBlackRGB: 0, 0, 0;
+        --gradientMaincolor: linear-gradient(to right, rgba(14,171,163,1) 0%, rgba(22, 193,181,1) 100%);
+        --color3: #3CBCCB;
+        --color4: #8795B0;
+        --color5: #CAD8F2;
+        --color6: rgb(20, 25, 25);
+        --white: #FFFFFF;
+        --color1MainTrans: rgba(24, 24, 35, 0.2);
+        --color1Trans: rgba(10, 10, 15, 0.5);
+        --color2Trans: rgba(51, 161, 212, 0.2);
+        --color2TransPlus: rgba(51, 161, 212, 0.08);
+        --color3Trans: rgba(60, 188, 203, 0.4);
+        --color4Trans: rgba(135, 149, 176, 0.4);
+        --color5Trans: rgba(202, 216, 242, 0.4);
+        --color6Trans: rgba(60, 60, 60, 0.8);
+        --gradient: linear-gradient(to right, rgba(49, 156, 214, 1) 0%, rgba(61, 192, 201, 1) 100%);
+        --gradient2: linear-gradient(61deg, rgba(87, 204, 223, 1) 0%, rgba(71, 115, 217, 1) 100%);
+        --font-primary: 'Roboto', sans-serif;
+        --navMaxHeight: 85px;
+        --footerMaxHeigth: 50px;
+    }
+
+    :root.high-contrast {
+        --colorMain: #1A63C1;
+        --colorMainRGB: 26, 99, 193;
+        --colorMainTrans: rgba(0, 163, 139, 0.1);
+        --greyFooter: #F1F1F1;
+        --whiteContranst: #F6F6F6;
+        --greyFooterRGB: 241,241,241;
+        --textGrey: #495057;
+        --textGreyRGB: 73, 80, 87;
+        --textcolor: #00A88F;
+        --textcolorRGB: 0, 163, 143;
+        --textBlack: 000000;
+        --textBlackRGB: 0, 0, 0;
+        --gradientMaincolor: linear-gradient(to right, rgba(14,171,163,1) 0%, rgba(22, 193,181,1) 100%);
+        --color3: #3CBCCB;
+        --color4: #8795B0;
+        --color5: #CAD8F2;
+        --color6: rgb(20, 25, 25);
+        --white: #FFFFFF;
+        --color1MainTrans: rgba(24, 24, 35, 0.2);
+        --color1Trans: rgba(10, 10, 15, 0.5);
+        --color2Trans: rgba(51, 161, 212, 0.2);
+        --color2TransPlus: rgba(51, 161, 212, 0.08);
+        --color3Trans: rgba(60, 188, 203, 0.4);
+        --color4Trans: rgba(135, 149, 176, 0.4);
+        --color5Trans: rgba(202, 216, 242, 0.4);
+        --color6Trans: rgba(60, 60, 60, 0.8);
+        --gradient: linear-gradient(to right, rgba(49, 156, 214, 1) 0%, rgba(61, 192, 201, 1) 100%);
+        --gradient2: linear-gradient(61deg, rgba(87, 204, 223, 1) 0%, rgba(71, 115, 217, 1) 100%);
+        --font-primary: 'Roboto', sans-serif;
+        --navMaxHeight: 85px;
+        --footerMaxHeigth: 50px;
+    }
 
 
 html {
@@ -105,6 +193,13 @@ img {
     font-weight: lighter;
 }
 
+.icon-Profile {
+    width: 50px;
+    height: 50px;
+    clip-path: circle(50% at 50% 50%);
+    background-color: #ACB4BC;
+}
+
 .active {
     font-weight: bold;
 }
@@ -113,9 +208,42 @@ img {
     font-weight: bold;
 }
 
+/* Site bar */
+.site-bar {
+    border-radius: 0px 10px 10px 0px;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: var(--colorMainTrans);
+    height: 100%;
+}
+
+.aside-link {
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: var(--textGrey);
+}
+
+    .aside-link:hover {
+        color: var(--textGrey);
+    }
+
+.content-page {
+    overflow-y: auto; /* Scrollable content */
+}
+
 /* Footer format */
 .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: var(--greyFooter);
+    height: 100%;
+    max-height: var(--footerMaxHeigth);
 }
 
 .footer.text-muted .container {
@@ -123,5 +251,3 @@ img {
     text-align: center; 
     font-weight: lighter;
 }
-
-

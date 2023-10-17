@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Option1.cshtml.cs" />
+    <Compile Remove="Pages\Option2.cshtml.cs" />
+    <Compile Remove="Pages\Option3.cshtml.cs" />
+    <Compile Remove="Pages\Shared\Datos.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Option1.cshtml" />
+    <Content Remove="Pages\Option2.cshtml" />
+    <Content Remove="Pages\Option3.cshtml" />
+    <Content Remove="Pages\Shared\Datos.cshtml" />
+  </ItemGroup>
+
+</Project>
